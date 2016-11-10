@@ -17,6 +17,11 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/richardsoderman/Documents/Github/2dv610/model/player.rb": [
@@ -25,14 +30,10 @@
         1,
         null,
         1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
+        2,
         1,
         null,
+        1,
         null,
         null,
         1,
@@ -41,11 +42,15 @@
         null,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1478794004
+    "timestamp": 1478795331
   }
 }
