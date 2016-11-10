@@ -27,5 +27,12 @@ describe 'Move class' do
     position = move.string_to_position_parser('y2')
     assert_equal position[:y], 2
   end
+
+  it 'is position used shuld return true if position is used' do
+    move = Move.new
+    positions = [{x: 1, y: 1}, {x: 2, y: 1}]
+    refute move.is_position_used(positions, {x:3, y: 3})
+    assert_equal move.is_position_used(positions, {x:2, y: 1}), true 
+  end
   
 end
