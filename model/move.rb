@@ -11,7 +11,7 @@ class Move
   end
 
   def string_to_position_parser(string)
-    
+    position = { }
     parts = string.split ''
     direction = parts[0].to_sym
     steps = parts[1].to_i
@@ -23,7 +23,8 @@ class Move
     if steps >= 3 || steps < 0
       raise ArgumentError, 'Invalid position'
     end
-    
+    position[direction] = steps
+    position
   end
   
 end
