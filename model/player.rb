@@ -7,14 +7,15 @@ class Player
       raise ArgumentError, 'name cannot be empty'
     end
     @name = name.capitalize
+    @moves = []
   end
 
-  def add_move
-
+  def add_move(move)
+    @moves << move
   end
 
   def get_all_moves
-    
+    @moves
   end
 
   def get_name
