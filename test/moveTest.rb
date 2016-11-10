@@ -15,5 +15,11 @@ describe 'Move class' do
     end
   end
 
+  it 'string to position parser should throw ArgumentError on to high number' do
+    assert_raises ArgumentError do
+      move = Move.new
+      move.string_to_position_parser('x3')
+    end
+  end
   
 end
