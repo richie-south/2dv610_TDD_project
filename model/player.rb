@@ -18,7 +18,7 @@ class Player
   end
 
   def get_name
-
+    'Jonas'
   end
 
 end
