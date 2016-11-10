@@ -3,6 +3,7 @@
 class Player 
 
   def initialize(name)
+    raise ArgumentError, 'name cannot be empty'
   end
 
   def add_move
