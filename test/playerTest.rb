@@ -13,4 +13,9 @@ describe 'Player class' do
       Player.new('')
     end
   end
+
+  it 'get player name capitalized' do
+    player = Player.new('jonas');
+    assert_equal player.get_name, 'Jonas' 
+  end
 end
