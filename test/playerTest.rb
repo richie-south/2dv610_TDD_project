@@ -18,4 +18,13 @@ describe 'Player class' do
     player = Player.new('jonas');
     assert_equal player.get_name, 'Jonas' 
   end
+
+  it 'get all added moves' do
+    player = Player.new('Jonas')
+    move = mock()
+    player.add_move(move)
+    assert_includes player.get_all_moves, move
+  end
+
+
 end
