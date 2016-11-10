@@ -21,5 +21,11 @@ describe 'Move class' do
       move.string_to_position_parser('x3')
     end
   end
+
+  it 'string to position parser should return hash of position' do
+    move = Move.new
+    position = move.string_to_position_parser('y2')
+    assert_equal position[:y], 2
+  end
   
 end
