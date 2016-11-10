@@ -6,7 +6,7 @@ class Player
     unless name.length > 0
       raise ArgumentError, 'name cannot be empty'
     end
-    
+    @name = name.capitalize
   end
 
   def add_move
@@ -18,7 +18,7 @@ class Player
   end
 
   def get_name
-    'Jonas'
+    @name
   end
 
 end
