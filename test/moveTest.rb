@@ -34,5 +34,15 @@ describe 'Move class' do
     refute move.is_position_used(positions, {x:3, y: 3})
     assert_equal move.is_position_used(positions, {x:2, y: 1}), true 
   end
+
+  it 'merge position objects should hold both x and y keys' do
+    assert_raises ArgumentError do
+      move = Move.new 
+      firstMove = move.string_to_position_parser 'x1'
+      secondMove = move.string_to_position_parser 'y1'
+      move.merge_position_objects firstMove, secondMove
+
+    end
+  end
   
 end
