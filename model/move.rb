@@ -11,6 +11,7 @@ class Move
     unless position.include?(:y) && position.include?(:x)
       raise ArgumentError, 'Position must include both directions'
     end
+    position
   end
 
   def string_to_position_parser(string)
