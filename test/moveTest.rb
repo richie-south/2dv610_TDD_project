@@ -44,5 +44,13 @@ describe 'Move class' do
 
     end
   end
+
+  it 'merge position objects should return merged position object' do
+    move = Move.new 
+    firstMove = move.string_to_position_parser 'x1'
+    secondMove = move.string_to_position_parser 'y2'
+    positions = move.merge_position_objects firstMove, secondMove
+    assert_equal positions, firstMove.merge(secondMove)
+  end
   
 end
