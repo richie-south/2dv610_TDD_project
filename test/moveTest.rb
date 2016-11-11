@@ -39,7 +39,7 @@ describe 'Move class' do
     assert_raises ArgumentError do
       move = Move.new 
       firstMove = move.string_to_position_parser 'x1'
-      secondMove = move.string_to_position_parser 'y1'
+      secondMove = move.string_to_position_parser 'x2'
       move.merge_position_objects firstMove, secondMove
 
     end
