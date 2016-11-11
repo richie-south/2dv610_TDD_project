@@ -12,6 +12,6 @@ describe 'Rules class' do
     rules = Rules.new
     player = mock()
     player.expects(:get_all_moves).returns([{x: 0, y: 0}, {x: 0, y: 1}, {x: 0, y: 2}])
-    refute rules.is_player_winner(player)
+    assert_equal rules.is_player_winner(player), true
   end
 end
