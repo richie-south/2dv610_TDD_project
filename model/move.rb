@@ -7,7 +7,10 @@ class Move
   end
 
   def merge_position_objects(p1, p2)
-    raise ArgumentError, 'Position must include both directions'
+    position = p1.merge p2
+    unless position.include?(:y) && position.include?(:x)
+      raise ArgumentError, 'Position must include both directions'
+    end
   end
 
   def string_to_position_parser(string)
