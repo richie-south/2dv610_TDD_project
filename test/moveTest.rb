@@ -49,8 +49,8 @@ describe 'Move class' do
     move = Move.new 
     firstMove = move.string_to_position_parser 'x1'
     secondMove = move.string_to_position_parser 'y2'
-    positions = move.merge_position_objects firstMove, secondMove
-    assert_equal positions, firstMove.merge(secondMove)
+    position = move.merge_position_objects firstMove, secondMove
+    assert_equal position, firstMove.merge(secondMove)
   end
   
 end
