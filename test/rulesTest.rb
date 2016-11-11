@@ -50,4 +50,18 @@ describe 'Rules class' do
     end
   end
 
+  it 'is player winner: should be false if player does not hav diagonal 3' do
+    rules = Rules.new
+
+    testCase = [
+      [{x: 1, y: 2}, {x: 1, y: 1}, {x: 2, y: 2}],
+      [{x: 0, y: 2}, {x: 0, y: 1}, {x: 2, y: 0}]]
+    
+    2.times do |i| 
+      player = mock()
+      player.expects(:get_all_moves).returns(testCase[i])
+      assert_equal rules.is_player_winner(player), false
+    end
+  end
+
 end
