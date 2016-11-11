@@ -89,6 +89,5 @@ class Rules
     
     grid
   end
-
-
+  
 end
