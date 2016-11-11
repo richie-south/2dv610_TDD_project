@@ -19,7 +19,7 @@ class Move
     direction = parts[0].to_sym
     steps = parts[1].to_i
 
-    until @input_directions.include? direction 
+    unless @input_directions.include? direction 
       raise ArgumentError, 'Unknown direction'
     end
     
