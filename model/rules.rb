@@ -23,6 +23,20 @@ class Rules
       false
     end
   end
+  
+  def check_if_three_in_row_x(grid, row = 0)
+    if row > grid.length-1
+      return false
+    end
+    heap = []
+    grid[row].each do | column |
+      if column
+        heap << column
+      end
+    end
+
+    (heap.length >= grid.length) ? true : check_if_three_in_row_x(grid, row += 1) 
+  end
 
   def check_if_three_in_row_y(grid, column = 0)
     if column > grid.length-1
