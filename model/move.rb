@@ -6,8 +6,8 @@ class Move
     
   end
 
-  def get_position_object
-
+  def merge_position_objects(p1, p2)
+    raise ArgumentError, 'Position must include both directions'
   end
 
   def string_to_position_parser(string)
