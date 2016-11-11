@@ -19,11 +19,35 @@ class Rules
       true
     elsif check_if_three_in_row_y(grid)
       true
+    elsif check_if_three_in_diagonal(grid)
+      true
     else
       false
     end
   end
-  
+
+  def check_if_three_in_diagonal(grid)
+     
+    foo = lambda do |positions|
+      heap = []
+      i = 0
+      grid.each do |row|
+        if row[positions[i]]
+          heap << row[positions[i]]
+        end
+        i += 1
+      end
+      heap
+    end
+
+    if (foo.call([0, 1, 2]).length >= grid.length)
+      return true
+    elsif (foo.call([2, 1, 0]).length >= grid.length)
+      return true
+    end
+    false 
+  end
+
   def check_if_three_in_row_x(grid, row = 0)
     if row > grid.length-1
       return false
@@ -50,7 +74,7 @@ class Rules
       end
     end
 
-    (heap.length >= grid.length) ? true : check_if_three_in_row(grid, column += 1)
+    (heap.length >= grid.length) ? true : check_if_three_in_row_y(grid, column += 1)
   end 
 
   def map_to_grid(moves)
