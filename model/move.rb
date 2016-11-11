@@ -26,5 +26,9 @@ class Move
     position[direction] = steps
     position
   end
+
+  def is_position_used(positions, to_add)
+    positions.include?({x: to_add[:x], y: to_add[:y]})
+  end
   
 end
