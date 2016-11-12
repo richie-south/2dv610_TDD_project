@@ -24,4 +24,21 @@ describe 'GameController class' do
     assert_equal actual.get_name, name
   end
 
+  it 'get player name should run display_invalid_name' do
+    name = ''
+    r = mock()
+    m = mock()
+    g = mock()
+    c = mock()
+    inputOrder = sequence('inputOrder')
+    c.expects(:display_enter_player_name).in_sequence(inputOrder)
+    c.expects(:get_input).in_sequence(inputOrder).returns(name)
+    c.expects(:display_invalid_name).in_sequence(inputOrder)
+    c.expects(:display_enter_player_name).in_sequence(inputOrder)
+    c.expects(:get_input).in_sequence(inputOrder).returns('jonas')
+    
+    gameController = GameController.new(r, m, g, c)
+    actual = gameController.get_player_name
+  end
+
 end
