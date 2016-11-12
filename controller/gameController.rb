@@ -22,7 +22,8 @@ class GameController
     begin
       @move.merge_position_objects coordinatePartOne, coordinatePartTwo
     rescue
-      
+      @controllsView.invalid_coordinate
+      get_player_coordinate_inputs name
     end
   end
 
