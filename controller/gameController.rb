@@ -31,7 +31,8 @@ class GameController
     begin
       @move.string_to_position_parser @controllsView.get_input
     rescue
-      
+      @controllsView.invalid_coordinate
+      get_coordinate_input name
     end
   end
 
