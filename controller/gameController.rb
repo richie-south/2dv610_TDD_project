@@ -6,14 +6,13 @@ class GameController
     @rules = rules
     @move = move
     @gameBordView = gameBordView
-    @controllsView = controllsView
-
-    
+    @controllsView = controllsView  
   end
 
-  def get_name_inputs
-    @gameBordView.display_enter_player_names
+  def get_player_name
+    @controllsView.display_enter_player_name
     
+    Player.new(@controllsView.get_input)
   end
 
 end
