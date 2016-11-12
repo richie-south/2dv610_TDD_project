@@ -41,4 +41,21 @@ describe 'GameController class' do
     actual = gameController.get_player_name
   end
 
+  it 'get player coordinate inputs should return position object' do
+    r = mock()
+    m = mock()
+    g = mock()
+    c = mock()
+    inputOrder = sequence('inputOrder')
+    c.expects(:display_enter_first_coordinate).in_sequence(inputOrder)
+    c.expects(:get_input).in_sequence(inputOrder).returns('x1')
+    c.expects(:display_enter_second_coordinate).in_sequence(inputOrder)
+    c.expects(:get_input).in_sequence(inputOrder).returns('y1')
+
+    gameController = GameController.new(r, m, g, c)
+    actual = gameController.get_player_coordinate_inputs 'Jonas'
+    assert_equal({x: 1, y: 1}, actual)
+
+  end
+
 end
