@@ -48,10 +48,10 @@ describe 'GameController class' do
     c = mock()
     expected = {x: 1, y: 1}
     inputOrder = sequence('inputOrder')
-    c.expects(:display_enter_first_coordinate).in_sequence(inputOrder)
+    c.expects(:display_enter_coordinate).in_sequence(inputOrder)
     c.expects(:get_input).in_sequence(inputOrder).returns('x1')
     m.expects(:string_to_position_parser).in_sequence(inputOrder).returns({x:1})
-    c.expects(:display_enter_second_coordinate).in_sequence(inputOrder)
+    c.expects(:display_enter_coordinate).in_sequence(inputOrder)
     c.expects(:get_input).in_sequence(inputOrder).returns('y1')
     m.expects(:string_to_position_parser).in_sequence(inputOrder).returns({y:1})
     m.expects(:merge_position_objects).in_sequence(inputOrder).returns(expected)
