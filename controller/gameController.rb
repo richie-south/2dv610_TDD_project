@@ -9,13 +9,22 @@ class GameController
     @controllsView = controllsView
   end
 
+  def run 
+    playerOne = get_player_name
+    @controllsView.display_player_created playerOne.get_name
+    playerTwo = get_player_name
+    @controllsView.display_player_created playerTwo.get_name
+  end
 
   def get_player_coordinate_inputs(name)
-    @controllsView.display_enter_first_coordinate
+    @controllsView.display_enter_first_coordinate name
     @controllsView.get_input
-    @controllsView.display_enter_second_coordinate
+    @move.string_to_position_parser
+    @controllsView.display_enter_second_coordinate name
     @controllsView.get_input
-    {x:1, y:1}
+    @move.string_to_position_parser
+    @move.merge_position_objects
+    {x: 1, y: 1}
   end
 
   def get_player_name
