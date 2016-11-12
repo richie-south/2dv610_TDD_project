@@ -17,14 +17,22 @@ class GameController
   end
 
   def get_player_coordinate_inputs(name)
-    @controllsView.display_enter_first_coordinate name
-    @controllsView.get_input
-    @move.string_to_position_parser
-    @controllsView.display_enter_second_coordinate name
-    @controllsView.get_input
-    @move.string_to_position_parser
-    @move.merge_position_objects
-    {x: 1, y: 1}
+    coordinatePartOne = get_coordinate_input name
+    coordinatePartTwo = get_coordinate_input name 
+    begin
+      @move.merge_position_objects coordinatePartOne, coordinatePartTwo
+    rescue
+      
+    end
+  end
+
+  def get_coordinate_input(name)
+    @controllsView.display_enter_coordinate name
+    begin
+      @move.string_to_position_parser @controllsView.get_input
+    rescue
+      
+    end
   end
 
   def get_player_name
