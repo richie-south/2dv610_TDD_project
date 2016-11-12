@@ -111,7 +111,7 @@ describe 'GameController class' do
     m.expects(:merge_position_objects).in_sequence(inputOrder).returns(expected)
 
     gameController = GameController.new(r, m, g, c)
-    actual = cgameController.get_player_coordinate_inputs 'Jonas'
+    actual = gameController.get_player_coordinate_inputs 'Jonas'
     assert_equal(expected, actual)
   end
 
