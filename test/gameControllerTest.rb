@@ -145,4 +145,21 @@ describe 'GameController class' do
     assert_equal true, actual
   end
 
+  it 'is any player winner: should return false if no player is winner' do
+    r = mock() 
+    m = mock()
+    g = mock() 
+    c = mock()
+    p1 = mock()
+    p2 = mock()
+
+    r.expects(:is_player_winner).returns(false).at_least_once
+    p1.expects(:get_all_moves).returns([])
+    p2.expects(:get_all_moves).returns([])
+
+    gameController = GameController.new(r, m, g, c)
+    actual = gameController.is_any_player_winner([p1, p2])
+    assert_equal false, actual
+  end
+
 end
