@@ -137,8 +137,8 @@ describe 'GameController class' do
     p1 = mock()
     p2 = mock()
 
+    r.expects(:is_player_winner).returns(true)
     p1.expects(:get_all_moves).returns([{x: 0, y: 0}, {x: 0, y: 1}, {x: 0, y: 2}])
-    p2.expects(:get_all_moves).returns([])
 
     gameController = GameController.new(r, m, g, c)
     actual = gameController.is_any_player_winner([p1, p2])
