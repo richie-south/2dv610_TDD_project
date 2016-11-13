@@ -162,4 +162,20 @@ describe 'GameController class' do
     assert_equal false, actual
   end
 
+  it 'get winner player should return player instance' do
+    r = mock() 
+    m = mock()
+    g = mock() 
+    c = mock()
+    p1 = mock()
+    p2 = mock()
+
+    r.expects(:is_player_winner).returns(true).at_least_once
+    p1.expects(:get_all_moves)
+
+    gameController = GameController.new(r, m, g, c)
+    actual = gameController.get_winner_player([p1, p2])
+    assert_equal p1, actual
+  end
+
 end
