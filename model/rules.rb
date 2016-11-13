@@ -6,8 +6,7 @@ class Rules
   end
 
   # is game over, p1, p2 
-  def is_player_winner(player)
-    moves = player.get_all_moves
+  def is_player_winner(moves)
     grid = map_to_grid moves
     is_winner grid
   end
