@@ -115,4 +115,18 @@ describe 'GameController class' do
     assert_equal(expected, actual)
   end
 
+  it 'get next player should get index from array' do
+    r = mock()
+    m = mock()
+    g = mock()
+    c = mock()
+    gameController = GameController.new(r, m, g, c)
+    value, index = gameController.get_next_player([1, 2], 0)
+    assert_equal value, 1
+    assert_equal index, 1
+    value, index = gameController.get_next_player([1, 2], 3)
+    assert_equal value, 1
+    assert_equal index, 1
+  end
+
 end
