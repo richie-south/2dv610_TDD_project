@@ -24,6 +24,14 @@ class GameController
     end
   end
 
+  def is_any_player_winner(players)
+    players.each do |player| 
+      if @rules.is_player_winner(player.get_all_moves)
+        return true
+      end
+    end
+  end
+
   end
 
   def get_player_coordinate_inputs(name)
