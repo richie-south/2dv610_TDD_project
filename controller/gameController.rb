@@ -16,7 +16,6 @@ class GameController
     @controllsView.display_player_created playerTwo.get_name
 
   def get_next_player(players, index)
-    puts players[index].nil?
     if players[index].nil?
       index = 0
       [players[index], index+1]
