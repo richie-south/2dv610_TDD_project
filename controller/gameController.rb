@@ -39,6 +39,7 @@ class GameController
         return player
       end
     end
+    false
   end
 
   end
