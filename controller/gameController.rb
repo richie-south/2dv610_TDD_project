@@ -23,6 +23,7 @@ class GameController
       @move.merge_position_objects coordinatePartOne, coordinatePartTwo
     rescue
       @controllsView.invalid_coordinate
+      @controllsView.display_invalid_coordinate
       get_player_coordinate_inputs name
     end
   end
@@ -33,6 +34,7 @@ class GameController
       @move.string_to_position_parser @controllsView.get_input
     rescue
       @controllsView.invalid_coordinate
+      @controllsView.display_invalid_coordinate
       get_coordinate_input name
     end
   end
