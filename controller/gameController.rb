@@ -33,6 +33,12 @@ class GameController
     false
   end
 
+  def get_winner_player(players)
+    players.each do |player|
+      if @rules.is_player_winner(player.get_all_moves)
+        return player
+      end
+    end
   end
 
   end
