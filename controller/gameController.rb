@@ -30,6 +30,9 @@ class GameController
         return true
       end
     end
+    false
+  end
+
   end
 
   end
