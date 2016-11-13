@@ -71,7 +71,7 @@ describe 'GameController class' do
       c.expects(:display_enter_coordinate).in_sequence(inputOrder)
       c.expects(:get_input).in_sequence(inputOrder).returns('x3')
       m.expects(:string_to_position_parser).in_sequence(inputOrder).raises(ArgumentError, '')
-      c.expects(:invalid_coordinate).in_sequence(inputOrder)
+      c.expects(:display_invalid_coordinate).in_sequence(inputOrder)
       c.expects(:display_enter_coordinate).in_sequence(inputOrder)
       c.expects(:get_input).in_sequence(inputOrder).returns('x2')
       m.expects(:string_to_position_parser).in_sequence(inputOrder).returns({x:1})
@@ -100,7 +100,7 @@ describe 'GameController class' do
     c.expects(:get_input).in_sequence(inputOrder).returns('x1')
     m.expects(:string_to_position_parser).in_sequence(inputOrder).returns({x:1})
     m.expects(:merge_position_objects).in_sequence(inputOrder).raises(ArgumentError)
-    c.expects(:invalid_coordinate).in_sequence(inputOrder)
+    c.expects(:display_invalid_coordinate).in_sequence(inputOrder)
     # working example
     c.expects(:display_enter_coordinate).in_sequence(inputOrder)
     c.expects(:get_input).in_sequence(inputOrder).returns('x1')
