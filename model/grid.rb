@@ -10,7 +10,7 @@ class Grid
     @size.times do |row|
       grid[row] = []
       @size.times do |column|
-        grid[row][column] = column
+        grid[row][column] = false
       end
     end
     grid
