@@ -8,9 +8,11 @@ class Grid
   def get_grid
     grid = []
     @size.times do |row|
-      grid[row] = row
+      grid[row] = []
+      @size.times do |column|
+        grid[row][column] = column
+      end
     end
-
     grid
   end
 end
