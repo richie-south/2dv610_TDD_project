@@ -6,6 +6,11 @@ class Grid
   end
 
   def get_grid
-    
+    grid = []
+    @size.times do |row|
+      grid[row] = row
+    end
+
+    grid
   end
 end
