@@ -45,6 +45,32 @@ class GameController
     false
   end
 
+  def play_game(playerOne, playerTwo)
+    players = [playerOne, playerTwo]
+    index = 0
+    
+    until (is_any_player_winner(players))
+      @controllsView.clear_screen
+      @controllsView.display_start_header
+      player, index = get_next_player(players, index)  
+      @gameBordView.display_gamebord playerOne.get_all_moves, playerTwo.get_all_moves # fix dynamic!
+
+      position = get_player_coordinate_inputs(player.get_name)
+      while @move.is_position_used(playerOne.get_all_moves + playerTwo.get_all_moves, position) do
+        @controllsView.display_position_is_used
+        position = get_player_coordinate_inputs player.get_name
+      end
+      player.add_move position
+    end
+    winner = get_winner_player(players)
+    if !winner
+      play_game playerOne, playerTwo
+    end
+
+    @controllsView.clear_screen
+    @controllsView.display_start_header
+    @gameBordView.display_gamebord playerOne.get_all_moves, playerTwo.get_all_moves # fix dynamic!
+    @controllsView.display_winner winner.get_name
   end
 
   def get_player_coordinate_inputs(name)
